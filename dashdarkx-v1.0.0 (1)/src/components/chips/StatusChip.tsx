@@ -8,7 +8,7 @@ interface StatusChipProps {
 const StatusChip = ({ status }: StatusChipProps) => {
   return (
     <Chip
-      variant="outlined"
+      variant="filled"
       size="small"
       icon={
         <IconifyIcon
@@ -26,7 +26,7 @@ const StatusChip = ({ status }: StatusChipProps) => {
       label={status}
       sx={{
         pr: 0.65,
-        width: 80,
+        width: 88,
         justifyContent: 'center',
         color:
           status === 'delivered'
@@ -41,12 +41,7 @@ const StatusChip = ({ status }: StatusChipProps) => {
             : status === 'pending'
               ? 'transparent.warning.main'
               : 'transparent.error.main',
-        borderColor:
-          status === 'delivered'
-            ? 'transparent.success.main'
-            : status === 'pending'
-              ? 'transparent.warning.main'
-              : 'transparent.error.main',
+        borderColor: 'transparent',
       }}
     />
   );

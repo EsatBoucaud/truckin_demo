@@ -11,12 +11,12 @@ interface LegendsProps {
 export const legendsData = [
   {
     id: 1,
-    type: 'Organic',
+    type: 'Referrals',
     rate: '80%',
   },
   {
     id: 2,
-    type: 'Social',
+    type: 'Broker boards',
     rate: '60%',
   },
   {
@@ -29,7 +29,7 @@ export const legendsData = [
 const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   const theme = useTheme();
   const [toggleColor, setToggleColor] = useState({
-    organic: true,
+    referrals: true,
     social: true,
     direct: true,
   });
@@ -45,9 +45,9 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   }, []);
 
   const getActiveColor = (type: string) => {
-    if (type === 'Organic') {
+    if (type === 'Referrals') {
       return theme.palette.primary.main;
-    } else if (type === 'Social') {
+    } else if (type === 'Broker boards') {
       return theme.palette.secondary.lighter;
     } else if (type === 'Direct') {
       return theme.palette.secondary.main;
@@ -55,9 +55,9 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   };
 
   const getDisableColor = (type: string) => {
-    if (type === 'Organic') {
+    if (type === 'Referrals') {
       return theme.palette.primary.dark;
-    } else if (type === 'Social') {
+    } else if (type === 'Broker boards') {
       return theme.palette.secondary.darker;
     } else if (type === 'Direct') {
       return theme.palette.secondary.dark;
@@ -71,14 +71,14 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
 
     const option = echartsInstance.getOption() as echarts.EChartsOption;
 
-    if (type === 'Organic') {
-      setToggleColor({ organic: true, social: false, direct: false });
-    } else if (type === 'Social') {
-      setToggleColor({ organic: false, social: true, direct: false });
+    if (type === 'Referrals') {
+      setToggleColor({ referrals: true, social: false, direct: false });
+    } else if (type === 'Broker boards') {
+      setToggleColor({ referrals: false, social: true, direct: false });
     } else if (type === 'Direct') {
-      setToggleColor({ organic: false, social: false, direct: true });
+      setToggleColor({ referrals: false, social: false, direct: true });
     } else {
-      setToggleColor({ organic: true, social: true, direct: true });
+      setToggleColor({ referrals: true, social: true, direct: true });
     }
 
     if (Array.isArray(option.series)) {

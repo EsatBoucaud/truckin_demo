@@ -1,4 +1,3 @@
-import { fontFamily } from 'theme/typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -11,7 +10,7 @@ interface LegendProps {
     rate: string;
   };
   toggleColor: {
-    organic: boolean;
+    referrals: boolean;
     social: boolean;
     direct: boolean;
   };
@@ -21,9 +20,9 @@ interface LegendProps {
 const VisitorsChartLegend = ({ data, toggleColor, handleToggleLegend }: LegendProps) => {
   let color = '';
 
-  if (toggleColor.organic && data.type === 'Organic') {
+  if (toggleColor.referrals && data.type === 'Referrals') {
     color = 'primary.main';
-  } else if (toggleColor.social && data.type === 'Social') {
+  } else if (toggleColor.social && data.type === 'Broker boards') {
     color = 'secondary.lighter';
   } else if (toggleColor.direct && data.type === 'Direct') {
     color = 'secondary.light';
@@ -36,12 +35,12 @@ const VisitorsChartLegend = ({ data, toggleColor, handleToggleLegend }: LegendPr
       <ButtonBase onClick={(e) => handleToggleLegend(e, data.type)} disableRipple>
         <Stack spacing={1} alignItems="center">
           <Box height={8} width={8} bgcolor={color} borderRadius={1} />
-          <Typography variant="body1" color="text.secondary" fontFamily={fontFamily.workSans}>
+          <Typography variant="body2" color="text.secondary">
             {data.type}
           </Typography>
         </Stack>
       </ButtonBase>
-      <Typography variant="body1" color="text.primary" fontFamily={fontFamily.workSans}>
+      <Typography variant="body2" color="text.primary">
         {data.rate}
       </Typography>
     </Stack>

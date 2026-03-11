@@ -13,15 +13,15 @@ export const revenueData = {
   categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   series: [
     {
-      name: 'Current clients',
+      name: 'Dedicated',
       data: [14000, 30000, 38000, 36000, 16000, 24000, 10000, 44000, 12000, 6000, 12000, 24000],
     },
     {
-      name: 'Subscribers',
+      name: 'Brokered',
       data: [12000, 20000, 26000, 12000, 10000, 32000, 6000, 8000, 12000, 18000, 16000, 6000],
     },
     {
-      name: 'New customers',
+      name: 'Spot',
       data: [12000, 26000, 24000, 24000, 8000, 14000, 0, 38000, 14000, 30000, 16000, 28000],
     },
   ],
@@ -32,22 +32,19 @@ const RevenueByCustomer = () => {
 
   return (
     <Paper sx={{ height: { xs: 540, md: 500 } }}>
-      {/* header */}
       <Typography variant="subtitle1" color="text.secondary">
-        Revenue by customer type
+        Revenue by lane mix
       </Typography>
 
-      {/* subheader */}
       <Stack justifyContent="space-between" mt={1}>
         <Stack alignItems="center" gap={0.875}>
-          <Typography variant="h3" fontWeight={600} letterSpacing={1}>
+          <Typography variant="h4" fontWeight={600}>
             $240.8K
           </Typography>
           <RateChip rate={'14.8%'} isUp={true} />
         </Stack>
 
         <Stack alignItems="center" spacing={2}>
-          {/* legends for bigger screen */}
           <Box display={{ xs: 'none', md: 'block' }}>
             <RevenueChartLegends chartRef={chartRef} sm={false} />
           </Box>
@@ -55,12 +52,10 @@ const RevenueByCustomer = () => {
         </Stack>
       </Stack>
 
-      {/* legends for smaller screen */}
       <Box display={{ xs: 'block', md: 'none' }}>
         <RevenueChartLegends chartRef={chartRef} sm={true} />
       </Box>
 
-      {/* stacked bar chart */}
       <Box height={400}>
         <RevenueChart chartRef={chartRef} data={revenueData} sx={{ minHeight: 1 }} />
       </Box>

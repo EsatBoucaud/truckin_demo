@@ -36,6 +36,9 @@ import CssBaseline from './components/utils/CssBaseline';
 export const theme = createTheme({
   typography,
   palette,
+  shape: {
+    borderRadius: 8,
+  },
   components: {
     MuiButton: Button,
     MuiButtonBase: ButtonBase,

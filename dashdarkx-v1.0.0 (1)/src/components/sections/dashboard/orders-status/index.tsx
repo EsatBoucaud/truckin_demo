@@ -1,4 +1,3 @@
-import { fontFamily } from 'theme/typography';
 import { useState, ChangeEvent } from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -33,13 +32,13 @@ const OrdersStatus = () => {
           justifyContent="space-between"
           flexGrow={1}
         >
-          <Typography variant="h6" fontWeight={400} fontFamily={fontFamily.workSans}>
-            Orders Status
+          <Typography variant="h6" fontWeight={600}>
+            Shipment board
           </Typography>
           <TextField
             variant="filled"
             size="small"
-            placeholder="Search for..."
+            placeholder="Search shipments"
             value={searchText}
             onChange={handleInputChange}
             sx={{ width: 220 }}
@@ -59,7 +58,7 @@ const OrdersStatus = () => {
         >
           <DateSelect />
           <Button variant="contained" size="small">
-            Create order
+            New shipment
           </Button>
         </Stack>
       </Stack>

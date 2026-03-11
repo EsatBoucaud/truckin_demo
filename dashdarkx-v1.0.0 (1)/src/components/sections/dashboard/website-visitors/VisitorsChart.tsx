@@ -42,7 +42,7 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
       radiusAxis: {
         show: false,
         type: 'category',
-        data: ['Direct', 'Social', 'Organic'],
+        data: ['Direct', 'Broker boards', 'Referrals'],
       },
       tooltip: {},
       series: [
@@ -57,14 +57,14 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
               },
             },
             {
-              type: 'Social',
+              type: 'Broker boards',
               value: 60,
               itemStyle: {
                 color: theme.palette.secondary.lighter,
               },
             },
             {
-              type: 'Organic',
+              type: 'Referrals',
               value: 80,
               itemStyle: {
                 color: theme.palette.primary.main,
@@ -86,10 +86,9 @@ const VisitorsChart = ({ chartRef, ...rest }: PolarBarChartProps) => {
           style: {
             text: '150k',
             fill: theme.palette.text.primary,
-            fontSize: theme.typography.h3.fontSize,
-            fontFamily: fontFamily.workSans,
+            fontSize: theme.typography.h4.fontSize,
+            fontFamily: fontFamily.monaSans,
             fontWeight: 500,
-            letterSpacing: 1,
           },
         },
       ],

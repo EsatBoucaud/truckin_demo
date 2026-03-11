@@ -32,7 +32,8 @@ const CollapseListItem = ({ subheader, active, items, icon }: MenuItem) => {
           primary={subheader}
           sx={{
             '& .MuiListItemText-primary': {
-              color: active ? 'primary.main' : null,
+              color: active ? 'text.primary' : null,
+              fontWeight: active ? 600 : 500,
             },
           }}
         />
@@ -56,7 +57,7 @@ const CollapseListItem = ({ subheader, active, items, icon }: MenuItem) => {
                 href={route.path}
                 sx={{
                   pl: 1.75,
-                  borderLeft: 4,
+                  borderLeft: 2,
                   borderStyle: 'solid',
                   borderColor: route.active ? 'primary.main' : 'transparent !important',
                   bgcolor: route.active ? 'info.dark' : 'info.darker',

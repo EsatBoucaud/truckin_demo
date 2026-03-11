@@ -12,35 +12,35 @@ interface LegendsProps {
 const legendsData = [
   {
     id: 1,
-    type: 'Current clients',
+    type: 'Dedicated',
   },
   {
     id: 2,
-    type: 'Subscribers',
+    type: 'Brokered',
   },
   {
     id: 3,
-    type: 'New customers',
+    type: 'Spot',
   },
 ];
 
 const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
   const [toggleColor, setToggleColor] = useState({
-    currentClients: true,
-    subscribers: true,
-    newCustomers: true,
+    dedicated: true,
+    brokered: true,
+    spot: true,
   });
 
   const handleLegendToggle = (seriesName: string) => {
     const echartsInstance = chartRef.current?.getEchartsInstance();
     if (!echartsInstance) return;
 
-    if (seriesName === 'Current clients') {
-      setToggleColor({ ...toggleColor, currentClients: !toggleColor.currentClients });
-    } else if (seriesName === 'Subscribers') {
-      setToggleColor({ ...toggleColor, subscribers: !toggleColor.subscribers });
-    } else if (seriesName === 'New customers') {
-      setToggleColor({ ...toggleColor, newCustomers: !toggleColor.newCustomers });
+    if (seriesName === 'Dedicated') {
+      setToggleColor({ ...toggleColor, dedicated: !toggleColor.dedicated });
+    } else if (seriesName === 'Brokered') {
+      setToggleColor({ ...toggleColor, brokered: !toggleColor.brokered });
+    } else if (seriesName === 'Spot') {
+      setToggleColor({ ...toggleColor, spot: !toggleColor.spot });
     }
 
     const option = echartsInstance.getOption() as echarts.EChartsOption;

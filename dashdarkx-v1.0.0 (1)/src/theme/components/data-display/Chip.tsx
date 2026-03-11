@@ -7,10 +7,10 @@ const Chip: Components<Omit<Theme, 'components'>>['MuiChip'] = {
       margin: 0,
       border: 1,
       borderStyle: 'solid',
-      borderRadius: theme.shape.borderRadius / 2,
+      borderRadius: theme.shape.borderRadius - 2,
     }),
     sizeSmall: ({ theme }) => ({
-      height: 20,
+      height: 22,
       fontSize: theme.typography.caption.fontSize,
     }),
     sizeMedium: ({ theme }) => ({

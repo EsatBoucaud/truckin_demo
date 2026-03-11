@@ -3,10 +3,6 @@ import {
   grey,
   red,
   green,
-  blue,
-  cyan,
-  purple,
-  violate,
   yellow,
   white,
   transparentRed,
@@ -58,20 +54,21 @@ const palette: PaletteOptions = {
     darker: grey[600],
   },
   primary: {
-    main: purple[500],
-    dark: purple[800],
+    light: yellow[300],
+    main: yellow[500],
+    dark: yellow[700],
   },
   secondary: {
-    lighter: blue[200],
-    light: cyan[400],
-    main: cyan[500],
-    dark: cyan[900],
-    darker: blue[500],
+    lighter: green[100],
+    light: green[300],
+    main: green[500],
+    dark: green[700],
+    darker: green[900],
   },
   info: {
-    main: blue[700],
-    dark: blue[800],
-    darker: blue[900],
+    main: grey[700],
+    dark: grey[800],
+    darker: grey[900],
   },
   success: {
     main: green[500],
@@ -89,8 +86,8 @@ const palette: PaletteOptions = {
   },
   gradients: {
     primary: {
-      main: purple[500],
-      state: violate[600],
+      main: yellow[500],
+      state: yellow[700],
     },
   },
   transparent: {

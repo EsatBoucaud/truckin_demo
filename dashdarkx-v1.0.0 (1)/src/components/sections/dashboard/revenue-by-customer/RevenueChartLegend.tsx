@@ -1,4 +1,3 @@
-import { fontFamily } from 'theme/typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -10,9 +9,9 @@ interface LegendProps {
     type: string;
   };
   toggleColor: {
-    currentClients: boolean;
-    subscribers: boolean;
-    newCustomers: boolean;
+    dedicated: boolean;
+    brokered: boolean;
+    spot: boolean;
   };
   handleLegendToggle: (seriesName: string) => void;
 }
@@ -20,11 +19,11 @@ interface LegendProps {
 const RevenueChartLegend = ({ data, toggleColor, handleLegendToggle }: LegendProps) => {
   let color = '';
 
-  if (toggleColor.currentClients && data.type === 'Current clients') {
+  if (toggleColor.dedicated && data.type === 'Dedicated') {
     color = 'primary.main';
-  } else if (toggleColor.subscribers && data.type === 'Subscribers') {
+  } else if (toggleColor.brokered && data.type === 'Brokered') {
     color = 'secondary.lighter';
-  } else if (toggleColor.newCustomers && data.type === 'New customers') {
+  } else if (toggleColor.spot && data.type === 'Spot') {
     color = 'secondary.light';
   } else {
     color = 'text.secondary';
@@ -34,7 +33,7 @@ const RevenueChartLegend = ({ data, toggleColor, handleLegendToggle }: LegendPro
     <ButtonBase onClick={() => handleLegendToggle(data.type)} disableRipple>
       <Stack spacing={0.5} alignItems="center">
         <Box height={8} width={8} bgcolor={color} borderRadius={1} />
-        <Typography variant="body2" color="text.secondary" fontFamily={fontFamily.workSans}>
+        <Typography variant="body2" color="text.secondary">
           {data.type}
         </Typography>
       </Stack>

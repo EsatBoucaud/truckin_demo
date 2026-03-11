@@ -1,41 +1,38 @@
-import { fontFamily } from 'theme/typography';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import iPhone from 'assets/images/iPhone.png';
-import AWS8 from 'assets/images/AWS8.png';
 import Product from './Product';
 
 const productsData = [
   {
     id: 1,
-    name: 'iPhone 14 Pro Max',
-    imageUrl: iPhone,
-    inStock: 524,
-    price: '1,099.00',
+    code: 'T-14',
+    name: 'Freightliner Cascadia',
+    detail: 'Atlanta yard',
+    status: 'Ready',
   },
   {
     id: 2,
-    name: 'Apple Watch S8',
-    imageUrl: AWS8,
-    inStock: 320,
-    price: '799.00',
+    code: 'T-09',
+    name: 'Volvo VNL 760',
+    detail: 'Charlotte yard',
+    status: 'Service due',
   },
 ];
 
 const Products = () => {
   return (
     <Stack direction="column" gap={3.75} component={Paper} height={300}>
-      <Typography variant="h6" fontWeight={400} fontFamily={fontFamily.workSans}>
-        Products
+      <Typography variant="h6" fontWeight={600}>
+        Fleet
       </Typography>
 
       <Stack justifyContent="space-between">
-        <Typography variant="caption" fontWeight={400}>
-          Products
+        <Typography variant="caption" fontWeight={500}>
+          Unit
         </Typography>
-        <Typography variant="caption" fontWeight={400}>
-          Price
+        <Typography variant="caption" fontWeight={500}>
+          Status
         </Typography>
       </Stack>
 

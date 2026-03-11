@@ -1,4 +1,3 @@
-import { fontFamily } from 'theme/typography';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Tooltip from '@mui/material/Tooltip';
@@ -9,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
 import LogoImg from 'assets/images/Logo.png';
-import LanguageSelect from './LanguageSelect';
 import ProfileMenu from './ProfileMenu';
 
 interface TopbarProps {
@@ -26,8 +24,8 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
   };
 
   return (
-    <Stack alignItems="center" justifyContent="space-between" mb={{ xs: 0, lg: 1 }}>
-      <Stack spacing={2} alignItems="center">
+    <Stack alignItems="center" justifyContent="space-between" mb={{ xs: 0, lg: 0.5 }}>
+      <Stack spacing={1.5} alignItems="center">
         <Toolbar sx={{ display: { xm: 'block', lg: 'none' } }}>
           <IconButton
             size="medium"
@@ -50,19 +48,15 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
         </ButtonBase>
 
         <Typography
-          variant="h5"
+          variant="h6"
           fontWeight={600}
-          letterSpacing={1}
-          fontFamily={fontFamily.workSans}
           display={{ xs: 'none', lg: 'block' }}
         >
-          Analytics
+          Dispatch overview
         </Typography>
       </Stack>
 
       <Stack spacing={1} alignItems="center">
-        <LanguageSelect />
-
         <Tooltip title="Notifications">
           <IconButton size="large" sx={{ color: 'text.secondary' }}>
             <IconifyIcon icon="ion:notifications" />

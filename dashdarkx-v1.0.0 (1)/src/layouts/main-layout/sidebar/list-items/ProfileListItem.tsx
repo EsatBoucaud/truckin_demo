@@ -12,11 +12,11 @@ const ProfileListItem = ({ subheader, path }: MenuItem) => {
       <Stack spacing={1} alignItems="center">
         <Avatar src={AvatarImage} sx={{ height: 36, width: 36, bgcolor: 'primary.main' }} />
         <Stack direction="column">
-          <Typography variant="subtitle2" color="text.primary" letterSpacing={0.5}>
+          <Typography variant="subtitle2" color="text.primary">
             {subheader}
           </Typography>
           <Typography variant="caption" color="text.secondary" fontWeight={400}>
-            Account Settings
+            Team settings
           </Typography>
         </Stack>
       </Stack>

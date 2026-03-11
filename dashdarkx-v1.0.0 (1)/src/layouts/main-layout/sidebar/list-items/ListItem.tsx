@@ -18,7 +18,7 @@ const ListItem = ({ subheader, icon, path, active }: MenuItem) => {
       component={Link}
       href={path}
       onClick={handleClick}
-      sx={{ opacity: active ? 1 : 0.3 }}
+      sx={{ opacity: active ? 1 : 0.78 }}
     >
       <ListItemIcon>
         {icon && (
@@ -30,14 +30,15 @@ const ListItem = ({ subheader, icon, path, active }: MenuItem) => {
           />
         )}
       </ListItemIcon>
-      <ListItemText
-        primary={subheader}
-        sx={{
-          '& .MuiListItemText-primary': {
-            color: active && path === '/' ? 'primary.main' : null,
-          },
-        }}
-      />
+        <ListItemText
+          primary={subheader}
+          sx={{
+            '& .MuiListItemText-primary': {
+              color: active && path === '/' ? 'text.primary' : null,
+              fontWeight: active && path === '/' ? 600 : 500,
+            },
+          }}
+        />
     </ListItemButton>
   );
 };

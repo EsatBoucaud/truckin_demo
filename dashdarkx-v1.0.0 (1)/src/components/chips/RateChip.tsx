@@ -9,7 +9,7 @@ interface RateChipProps {
 const RateChip = ({ rate, isUp }: RateChipProps) => {
   return (
     <Chip
-      variant="outlined"
+      variant="filled"
       size="small"
       icon={
         <IconifyIcon
@@ -23,13 +23,14 @@ const RateChip = ({ rate, isUp }: RateChipProps) => {
       }
       label={rate}
       sx={{
-        px: 0.5,
-        width: 62,
+        px: 0.75,
+        minWidth: 72,
         flexDirection: 'row-reverse',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
+        gap: 0.5,
         color: isUp ? 'success.main' : 'error.main',
         bgcolor: isUp ? 'transparent.success.main' : 'transparent.error.main',
-        borderColor: isUp ? 'transparent.success.main' : 'transparent.error.main',
+        borderColor: 'transparent',
       }}
     />
   );

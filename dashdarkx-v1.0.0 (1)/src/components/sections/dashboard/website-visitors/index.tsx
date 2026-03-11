@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import { fontFamily } from 'theme/typography';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -15,16 +14,15 @@ const WebsiteVisitors = () => {
   return (
     <Paper sx={{ height: 500 }}>
       {/* header */}
-      <Stack alignItems="center" justifyContent="space-between" mb={-2}>
-        <Typography variant="h6" fontWeight={400} fontFamily={fontFamily.workSans}>
-          Website Visitors
+      <Stack alignItems="center" justifyContent="space-between" mb={-1}>
+        <Typography variant="h6" fontWeight={600}>
+          Load sources
         </Typography>
         <Button
-          variant="contained"
+          variant="outlined"
           color="secondary"
-          size="medium"
+          size="small"
           endIcon={<IconifyIcon icon="mingcute:arrow-down-line" />}
-          sx={{ py: 0.875, zIndex: 1000 }}
         >
           Export
         </Button>
