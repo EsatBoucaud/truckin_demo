@@ -1,0 +1,10 @@
+{
+  "name": "truckin-demo",
+  "private": true,
+  "scripts": {
+    "build": "node ./scripts/build-web.cjs",
+    "dev": "cd \"dashdarkx-v1.0.0 (1)\" && npm run dev",
+    "lint": "cd \"dashdarkx-v1.0.0 (1)\" && npm run lint",
+    "preview": "cd \"dashdarkx-v1.0.0 (1)\" && npm run preview"
+  }
+}
