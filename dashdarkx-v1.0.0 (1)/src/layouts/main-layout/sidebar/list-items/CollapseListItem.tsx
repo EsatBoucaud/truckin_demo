@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { MenuItem } from 'routes/sitemap';
 import Link from '@mui/material/Link';
 import List from '@mui/material/List';
@@ -7,9 +7,24 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import IconifyIcon from 'components/base/IconifyIcon';
+import { useLocation } from 'react-router-dom';
 
-const CollapseListItem = ({ subheader, active, items, icon }: MenuItem) => {
+const CollapseListItem = ({ subheader, items, icon }: MenuItem) => {
+  const location = useLocation();
+  const hasActiveChild = useMemo(
+    () =>
+      Boolean(
+        items?.some((item) => location.pathname === item.path || location.pathname.startsWith(`${item.path}/`)),
+      ),
+    [items, location.pathname],
+  );
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (hasActiveChild) {
+      setOpen(true);
+    }
+  }, [hasActiveChild]);
 
   const handleClick = () => {
     setOpen(!open);
@@ -23,7 +38,7 @@ const CollapseListItem = ({ subheader, active, items, icon }: MenuItem) => {
             <IconifyIcon
               icon={icon}
               sx={{
-                color: active ? 'primary.main' : null,
+                color: hasActiveChild ? 'primary.main' : null,
               }}
             />
           )}
@@ -32,8 +47,8 @@ const CollapseListItem = ({ subheader, active, items, icon }: MenuItem) => {
           primary={subheader}
           sx={{
             '& .MuiListItemText-primary': {
-              color: active ? 'text.primary' : null,
-              fontWeight: active ? 600 : 500,
+              color: hasActiveChild ? 'text.primary' : null,
+              fontWeight: hasActiveChild ? 600 : 500,
             },
           }}
         />
@@ -59,15 +74,24 @@ const CollapseListItem = ({ subheader, active, items, icon }: MenuItem) => {
                   pl: 1.75,
                   borderLeft: 2,
                   borderStyle: 'solid',
-                  borderColor: route.active ? 'primary.main' : 'transparent !important',
-                  bgcolor: route.active ? 'info.dark' : 'info.darker',
+                  borderColor:
+                    location.pathname === route.path || location.pathname.startsWith(`${route.path}/`)
+                      ? 'primary.main'
+                      : 'transparent !important',
+                  bgcolor:
+                    location.pathname === route.path || location.pathname.startsWith(`${route.path}/`)
+                      ? 'info.dark'
+                      : 'info.darker',
                 }}
               >
                 <ListItemText
                   primary={route.name}
                   sx={{
                     '& .MuiListItemText-primary': {
-                      color: route.active ? 'text.primary' : 'text.secondary',
+                      color:
+                        location.pathname === route.path || location.pathname.startsWith(`${route.path}/`)
+                          ? 'text.primary'
+                          : 'text.secondary',
                     },
                   }}
                 />

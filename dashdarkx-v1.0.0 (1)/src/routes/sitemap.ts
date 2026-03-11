@@ -24,7 +24,12 @@ const sitemap: MenuItem[] = [
     subheader: 'Dashboard',
     path: '/',
     icon: 'mingcute:home-1-fill',
-    active: true,
+  },
+  {
+    id: 'calendar',
+    subheader: 'Calendar',
+    path: paths.calendar,
+    icon: 'mingcute:calendar-2-fill',
   },
   {
     id: 'features',
@@ -72,7 +77,6 @@ const sitemap: MenuItem[] = [
     subheader: 'Settings',
     path: '#!',
     icon: 'material-symbols:settings-rounded',
-    active: true,
   },
   {
     id: 'resources',

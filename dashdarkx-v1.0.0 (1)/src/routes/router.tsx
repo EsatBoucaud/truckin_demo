@@ -9,6 +9,7 @@ import PageLoader from 'components/loading/PageLoader';
 
 const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/dashboard'));
+const Calendar = lazy(() => import('pages/calendar'));
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter(
             {
               index: true,
               element: <Dashboard />,
+            },
+            {
+              path: paths.calendar,
+              element: <Calendar />,
             },
           ],
         },

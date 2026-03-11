@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
 import { BRAND_LOGO_SRC, BRAND_NAME } from 'config/branding';
+import { useLocation } from 'react-router-dom';
+import paths from 'routes/paths';
 import ProfileMenu from './ProfileMenu';
 
 interface TopbarProps {
@@ -17,11 +19,24 @@ interface TopbarProps {
 }
 
 const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
+  const location = useLocation();
   const handleDrawerToggle = () => {
     if (!isClosing) {
       setMobileOpen(!mobileOpen);
     }
   };
+
+  const pageTitle = (() => {
+    if (location.pathname === '/' || location.pathname === paths.dashboard) {
+      return 'Dispatch overview';
+    }
+
+    if (location.pathname.startsWith(paths.calendar)) {
+      return 'Calendar';
+    }
+
+    return 'Operations';
+  })();
 
   return (
     <Stack alignItems="center" justifyContent="space-between" mb={{ xs: 0, lg: 0.5 }}>
@@ -56,7 +71,7 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
           fontWeight={600}
           display={{ xs: 'none', lg: 'block' }}
         >
-          Dispatch overview
+          {pageTitle}
         </Typography>
       </Stack>
 
