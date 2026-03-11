@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
-import LogoImg from 'assets/images/Logo.png';
+import { BRAND_LOGO_SRC, BRAND_NAME } from 'config/branding';
 import ProfileMenu from './ProfileMenu';
 
 interface TopbarProps {
@@ -44,7 +44,11 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
           disableRipple
           sx={{ display: { xm: 'block', lg: 'none' } }}
         >
-          <Image src={LogoImg} alt="logo" height={24} width={24} />
+          <Image
+            src={BRAND_LOGO_SRC}
+            alt={BRAND_NAME}
+            sx={{ display: 'block', height: 28, width: 'auto', maxWidth: 144 }}
+          />
         </ButtonBase>
 
         <Typography

@@ -11,22 +11,15 @@ const DateSelect = () => {
         defaultValue={dayjs('Jan-2024')}
         format="MMM YYYY"
         sx={(theme) => ({
-          boxShadow: 0,
           '& .MuiInputBase-root': {
             p: 0,
-            border: 'none',
-            background: `${theme.palette.info.dark} !important`,
+            border: `1px solid ${theme.palette.neutral.darker}`,
+            borderRadius: theme.shape.borderRadius,
+            background: `${theme.palette.info.main} !important`,
           },
           '& .MuiOutlinedInput-root': {
             pr: 0.75,
-
             '& .MuiOutlinedInput-notchedOutline': {
-              borderWidth: 0,
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderWidth: 0,
-            },
-            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderWidth: 0,
             },
           },
@@ -35,7 +28,7 @@ const DateSelect = () => {
             color: 'text.secondary',
             fontSize: 'caption.fontSize',
             fontWeight: 500,
-            width: 60,
+            width: 72,
           },
           '& .MuiIconButton-edgeEnd': {
             color: 'text.secondary',

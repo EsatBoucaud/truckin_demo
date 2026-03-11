@@ -1,4 +1,5 @@
 import Typography from '@mui/material/Typography';
+import { BRAND_NAME } from 'config/branding';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
       sx={{ textAlign: { xs: 'center', md: 'right' } }}
       letterSpacing={0.5}
     >
-      Truckin dashboard
+      {BRAND_NAME} dashboard
     </Typography>
   );
 };

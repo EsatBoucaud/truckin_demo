@@ -6,8 +6,10 @@ const PaginationItem: Components<Omit<Theme, 'components'>>['MuiPaginationItem']
     root: ({ theme }) => ({
       color: theme.palette.neutral.light,
       fontSize: theme.typography.body2.fontSize,
+      borderRadius: theme.shape.borderRadius,
       '&.Mui-selected': {
         background: theme.palette.primary.main,
+        color: theme.palette.info.darker,
         '&:hover': {
           background: theme.palette.primary.main,
         },

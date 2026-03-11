@@ -8,6 +8,7 @@ const MonthCalendar: Components<Omit<Theme, 'components'>>['MuiMonthCalendar'] =
         '& .MuiPickersMonth-monthButton': {
           '&.Mui-selected': {
             background: theme.palette.primary.main,
+            color: theme.palette.info.darker,
           },
         },
       },

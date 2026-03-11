@@ -8,6 +8,7 @@ const YearCalendar: Components<Omit<Theme, 'components'>>['MuiYearCalendar'] = {
         '& .MuiPickersYear-yearButton': {
           '&.Mui-selected': {
             background: theme.palette.primary.main,
+            color: theme.palette.info.darker,
           },
         },
       },

@@ -29,6 +29,7 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     },
     columnHeaders: ({ theme }) => ({
       padding: theme.spacing(0, 2),
+      borderBottom: `1px solid ${theme.palette.neutral.darker}`,
     }),
     columnHeader: ({ theme }) => ({
       background: theme.palette.info.main,
@@ -38,18 +39,16 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
     }),
     columnHeaderTitle: ({ theme }) => ({
       fontSize: theme.typography.caption.fontSize,
-      letterSpacing: 0.5,
+      letterSpacing: 0,
       fontWeight: 600,
     }),
     row: ({ theme }) => ({
       padding: theme.spacing(0, 2),
-      '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.info.dark,
-      },
+      borderBottom: `1px solid ${theme.palette.neutral.darker}`,
       '&.MuiDataGrid-row--editing': {
-        background: theme.palette.secondary.darker,
+        background: theme.palette.info.dark,
         '& .MuiDataGrid-cell': {
-          background: theme.palette.secondary.darker,
+          background: theme.palette.info.dark,
         },
       },
     }),
@@ -71,7 +70,7 @@ const DataGrid: Components<Omit<Theme, 'components'>>['MuiDataGrid'] = {
       border: 0,
       borderTop: 1,
       borderStyle: 'solid',
-      borderColor: `${theme.palette.info.darker} !important`,
+      borderColor: `${theme.palette.neutral.darker} !important`,
     }),
     columnSeparator: {
       display: 'none',

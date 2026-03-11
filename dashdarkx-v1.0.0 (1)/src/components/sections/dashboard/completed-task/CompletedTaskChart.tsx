@@ -1,7 +1,6 @@
 import { SxProps, useTheme } from '@mui/material';
 import { fontFamily } from 'theme/typography';
 import { useMemo } from 'react';
-import { graphic } from 'echarts';
 import * as echarts from 'echarts/core';
 import ReactEchart from 'components/base/ReactEchart';
 
@@ -62,19 +61,7 @@ const CompletedTaskChart = ({ ...rest }: CompletedTaskChartProps) => {
           showSymbol: false,
           lineStyle: {
             color: theme.palette.secondary.main,
-            width: 1.2,
-          },
-          areaStyle: {
-            color: new graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                offset: 0,
-                color: 'rgba(0, 194, 255, 0.2)',
-              },
-              {
-                offset: 1,
-                color: 'rgba(0, 194, 255, 0)',
-              },
-            ]),
+            width: 2,
           },
         },
       ],

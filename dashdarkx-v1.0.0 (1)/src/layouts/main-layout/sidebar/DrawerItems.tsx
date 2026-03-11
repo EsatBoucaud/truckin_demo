@@ -6,13 +6,12 @@ import Divider from '@mui/material/Divider';
 import ButtonBase from '@mui/material/ButtonBase';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import Typography from '@mui/material/Typography';
 import Image from 'components/base/Image';
 import IconifyIcon from 'components/base/IconifyIcon';
+import { BRAND_LOGO_SRC, BRAND_NAME } from 'config/branding';
 import CollapseListItem from './list-items/CollapseListItem';
 import ProfileListItem from './list-items/ProfileListItem';
 import ListItem from './list-items/ListItem';
-import LogoImg from 'assets/images/Logo.png';
 import { topListData, bottomListData, profileListData } from 'data/sidebarListData';
 
 const DrawerItems = () => {
@@ -26,11 +25,12 @@ const DrawerItems = () => {
         borderBottom={1}
         borderColor="neutral.darker"
       >
-        <ButtonBase component={Link} href="/" disableRipple>
-          <Image src={LogoImg} alt="logo" height={24} width={24} sx={{ mr: 1 }} />
-          <Typography variant="h6" color="text.primary" fontWeight={600}>
-            Truckin
-          </Typography>
+        <ButtonBase component={Link} href="/" disableRipple sx={{ maxWidth: '100%' }}>
+          <Image
+            src={BRAND_LOGO_SRC}
+            alt={BRAND_NAME}
+            sx={{ display: 'block', height: 40, width: 'auto', maxWidth: '100%' }}
+          />
         </ButtonBase>
       </Stack>
 

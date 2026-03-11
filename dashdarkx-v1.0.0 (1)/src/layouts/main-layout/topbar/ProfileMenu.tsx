@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconifyIcon from 'components/base/IconifyIcon';
 import AvatarImage from 'assets/images/avater.png';
+import { BRAND_EMAIL, BRAND_NAME } from 'config/branding';
 
 interface MenuItems {
   id: number;
@@ -20,32 +21,32 @@ interface MenuItems {
 const menuItems: MenuItems[] = [
   {
     id: 1,
-    title: 'View Profile',
+    title: 'Team profile',
     icon: 'mingcute:user-2-fill',
   },
   {
     id: 2,
-    title: 'Account Settings',
+    title: 'Team settings',
     icon: 'material-symbols:settings-account-box-rounded',
   },
   {
     id: 3,
-    title: 'Notifications',
+    title: 'Alerts',
     icon: 'ion:notifications',
   },
   {
     id: 4,
-    title: 'Switch Account',
+    title: 'Switch workspace',
     icon: 'material-symbols:switch-account',
   },
   {
     id: 5,
-    title: 'Help Center',
+    title: 'Help',
     icon: 'material-symbols:live-help',
   },
   {
     id: 6,
-    title: 'Logout',
+    title: 'Sign out',
     icon: 'material-symbols:logout',
   },
 ];
@@ -82,7 +83,7 @@ const ProfileMenu = () => {
                 bgcolor: theme.palette.primary.main,
               })}
             />
-            <Typography variant="subtitle2">Mr. John</Typography>
+            <Typography variant="subtitle2">{BRAND_NAME}</Typography>
           </Stack>
         </ButtonBase>
       </Tooltip>
@@ -120,10 +121,10 @@ const ProfileMenu = () => {
           />
           <Stack direction="column">
             <Typography variant="body2" fontWeight={500}>
-              John Carter
+              {BRAND_NAME} operations
             </Typography>
             <Typography variant="caption" fontWeight={400} color="text.secondary">
-              john@example.com
+              {BRAND_EMAIL}
             </Typography>
           </Stack>
         </MenuItem>

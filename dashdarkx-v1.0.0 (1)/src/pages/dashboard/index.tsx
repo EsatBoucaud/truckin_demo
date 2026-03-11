@@ -1,4 +1,5 @@
 import Grid from '@mui/material/Grid';
+import MascotBrief from 'components/sections/dashboard/mascot-brief';
 import TopCards from 'components/sections/dashboard/top-cards';
 import WebsiteVisitors from 'components/sections/dashboard/website-visitors';
 import RevenueByCustomer from 'components/sections/dashboard/revenue-by-customer';
@@ -9,6 +10,10 @@ import OrdersStatus from 'components/sections/dashboard/orders-status';
 const Dashboard = () => {
   return (
     <Grid container spacing={{ xs: 2.5, sm: 3, lg: 3.75 }}>
+      <Grid item xs={12}>
+        <MascotBrief />
+      </Grid>
+
       <Grid item xs={12}>
         <TopCards />
       </Grid>
